@@ -1,15 +1,19 @@
 ### Date created
-Include the date you created this project and README file.
+12.04.19
 
 ### Project Title
-Replace the Project Title
+BikeShare Project
 
 ### Description
-Describe what your project is about and what it does
+The BikeShare Project is a big data tool written in Python used for analysing bikeshare services from different cities.
 
 ### Files used
-Include the files used
+bikeshare.py
+### Data files in .gitignore
+chicago.csv
+new_york_city.csv
+washingto.csv
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
-
+Udacity
+https://github.com/udacity/pdsnd_github
