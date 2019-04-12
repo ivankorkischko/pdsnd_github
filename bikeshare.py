@@ -1,3 +1,8 @@
+### Description
+### The BikeShare Project is a big data tool used for analysing
+### bikeshare services from different cities.
+### The code is written in Python and uses Pandas and NumPy libraries.
+
 import time
 import pandas as pd
 import numpy as np
@@ -54,7 +59,7 @@ def load_data(city, month, day):
     Returns:
         df - Pandas DataFrame containing city data filtered by month and day
     """
-    
+
     # load data file into a dataframe
     df = pd.read_csv(CITY_DATA[city])
 
@@ -87,8 +92,8 @@ def time_stats(df):
 
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
-    
-    
+
+
     # convert the Start Time column to datetime
     df['Start Time'] = pd.to_datetime(df['Start Time'])
 
@@ -159,8 +164,8 @@ def trip_duration_stats(df):
 
     print('\nCalculating Trip Duration...\n')
     start_time = time.time()
-    
-    
+
+
     # display total travel time
     print('Total travel time: {} seconds.'.format(df['Trip Duration'].sum()))
 
@@ -185,7 +190,7 @@ def user_stats(df):
     # print value counts for each user type
     print(user_types)
 
-    
+
     # Gender information
     if 'Gender' not in df:
         print('Gender data not available.')
@@ -194,8 +199,8 @@ def user_stats(df):
         gender = df['Gender'].value_counts()
         # print value counts for gender
         print(gender)
-    
-    
+
+
     # Birthyear information
     if 'Birth Year' not in df:
         print('Birth Year data not available.')
@@ -204,7 +209,7 @@ def user_stats(df):
         print('Earliest year of birth: {}'.format(df['Birth Year'].min()))
         print('Most recent year of birth: {}'.format(df['Birth Year'].max()))
         print('Most common year of birth: {}'.format(df['Birth Year'].mode()[0]))
-    
+
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -219,8 +224,8 @@ def main():
         station_stats(df)
         trip_duration_stats(df)
         user_stats(df)
-        
-        
+
+
         # Print raw data
         raw_data = input('\nWould you like to print 5 lines of raw data? Enter yes or no.\n')
         count = 0
