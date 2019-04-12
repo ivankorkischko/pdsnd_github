@@ -54,7 +54,7 @@ def load_data(city, month, day):
     Returns:
         df - Pandas DataFrame containing city data filtered by month and day
     """
-    
+
     # load data file into a dataframe
     df = pd.read_csv(CITY_DATA[city])
 
@@ -87,8 +87,8 @@ def time_stats(df):
 
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
-    
-    
+
+
     # convert the Start Time column to datetime
     df['Start Time'] = pd.to_datetime(df['Start Time'])
 
@@ -100,7 +100,7 @@ def time_stats(df):
     # find the most popular month
     popular_month = df['month'].mode()[0]
 
-    print('Most Popular Start Month: ', months_data[popular_month-1].title())
+    print('Most Popular Start Month: {}'.format(months_data[popular_month-1].title()))
 
 
     # display the most common day of week
@@ -110,7 +110,7 @@ def time_stats(df):
     # find the most popular month
     popular_dayofweek = df['dayofweek'].mode()[0]
 
-    print('Most Popular Start Day of Week: ', daysofweek_data[popular_dayofweek].title())
+    print('Most Popular Start Day of Week: {}'.format(daysofweek_data[popular_dayofweek].title()))
 
 
     # display the most common start hour
@@ -120,10 +120,10 @@ def time_stats(df):
     # find the most popular hour
     popular_hour = df['hour'].mode()[0]
 
-    print('Most Popular Start Hour: ', popular_hour)
+    print('Most Popular Start Hour: {}'.format(popular_hour))
 
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    print("\nThis took {} seconds.".format(time.time() - start_time))
     print('-'*40)
 
 
@@ -159,8 +159,8 @@ def trip_duration_stats(df):
 
     print('\nCalculating Trip Duration...\n')
     start_time = time.time()
-    
-    
+
+
     # display total travel time
     print('Total travel time: {} seconds.'.format(df['Trip Duration'].sum()))
 
@@ -185,7 +185,7 @@ def user_stats(df):
     # print value counts for each user type
     print(user_types)
 
-    
+
     # Gender information
     if 'Gender' not in df:
         print('Gender data not available.')
@@ -194,8 +194,8 @@ def user_stats(df):
         gender = df['Gender'].value_counts()
         # print value counts for gender
         print(gender)
-    
-    
+
+
     # Birthyear information
     if 'Birth Year' not in df:
         print('Birth Year data not available.')
@@ -204,7 +204,7 @@ def user_stats(df):
         print('Earliest year of birth: {}'.format(df['Birth Year'].min()))
         print('Most recent year of birth: {}'.format(df['Birth Year'].max()))
         print('Most common year of birth: {}'.format(df['Birth Year'].mode()[0]))
-    
+
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -219,8 +219,8 @@ def main():
         station_stats(df)
         trip_duration_stats(df)
         user_stats(df)
-        
-        
+
+
         # Print raw data
         raw_data = input('\nWould you like to print 5 lines of raw data? Enter yes or no.\n')
         count = 0
