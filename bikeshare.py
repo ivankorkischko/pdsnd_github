@@ -169,7 +169,7 @@ def trip_duration_stats(df):
     print('Mean travel time: {} seconds.'.format(df['Trip Duration'].mean()))
 
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    print("\nThis took {} seconds.".format(time.time() - start_time))
     print('-'*40)
 
 
@@ -206,7 +206,7 @@ def user_stats(df):
         print('Most common year of birth: {}'.format(df['Birth Year'].mode()[0]))
 
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    print("\nThis took {} seconds.".format(time.time() - start_time))
     print('-'*40)
 
 
