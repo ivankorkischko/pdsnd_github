@@ -5,7 +5,7 @@
 BikeShare Project
 
 ### Description
-The BikeShare Project is a big data tool written in Python used for analysing bikeshare services from different cities.
+The BikeShare Project is a big data tool used for analysing bikeshare services from different cities. The code is written in Python and uses Pandas and NumPy libraries.
 
 ### Files used
 bikeshare.py
